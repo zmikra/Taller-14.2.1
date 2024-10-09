@@ -14,7 +14,7 @@
 
   <div class="container">
     <main>
-      <form action="#" method="get" class="row mt-4">
+      <form action="#" method="get" class="row mt-4 needs-validation" id="form">
         <div class="col">
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
@@ -22,16 +22,26 @@
             <div class="col-sm-6">
               <label for="nombre" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="nombre">
+              <div class="invalid-feedback">Debe ingresar un nombre</div>
+              
             </div>
+
+    
 
             <div class="col-sm-6">
               <label for="apellido" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="apellido">
+              <div class="invalid-feedback">Debe ingresar un apellido</div>
+              
             </div>
+
+
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email">
+              <div class="invalid-feedback">Debe ingresar un e-mail</div>
+              
             </div>
 
             <div class="col-sm-6">
@@ -50,7 +60,7 @@
             </div>
 
 
-            <button class="btn btn-primary" type="submit">Registrarme</button>
+            <button class="btn btn-primary" type="submit" id="btnRegistrarme">Registrarme</button>
 
 
           </div>
