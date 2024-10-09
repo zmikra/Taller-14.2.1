@@ -1,30 +1,30 @@
-const emailInput = document.getElementById("email");
-const validIcon = document.getElementById("valid-icon");
+function validateEmail() {
+    const email = document.getElementById('email');
+    const validityState = email.validity;
+    const emailFeedback = document.getElementById('emailFeedback');
 
-const element = document.getElementById("email");
-console.log(element.checkValidity());
-
-function validate() {
-    const input = document.getElementById('email');
-    const validityState = input.validity;
-  
+    console.log(email.checkValidity());
     if (validityState.valueMissing) {
-      input.setCustomValidity("Debe ingresar un email");
-    } else if (validityState.typeMismatch) {
-      input.setCustomValidity("El email debe tener un formato válido");
-    } else {
-      input.setCustomValidity("");
+    emailFeedback.textContent = 'Debe ingresar un email';
+      email.classList.add('is-invalid');
+    } else if (validityState.patternMismatch) {
+    emailFeedback.textContent = 'El email debe tener un formato válido';
+      email.classList.add('is-invalid');
+    } else  if(validityState.valid) {
+        email.classList.remove('is-invalid');
+        email.classList.add('is-valid');
+        emailFeedback.textContent = '';
     }
   
-    input.reportValidity();
+    email.reportValidity();
   }
 
   document.getElementById("submit").addEventListener("click", function(event) {
     event.preventDefault(); // Evitar que el formulario se envíe inmediatamente
-    validate(); // Llamar a la función de validación
+    validateEmail(); // Llamar a la función de validación
 });
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Código de Bootstrap para la validación
 (() => {
     'use strict'
   

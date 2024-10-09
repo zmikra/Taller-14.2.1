@@ -26,12 +26,13 @@
 
             <div class="col-sm-6">
               <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellido">
+              <input type="text" class="form-control" id="apellido" required>
             </div>
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="email" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+              <div id="emailFeedback" class="invalid-feedback"></div>
             </div>
 
             <div class="col-sm-6">

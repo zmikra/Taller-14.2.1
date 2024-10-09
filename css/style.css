@@ -1,11 +1,3 @@
 .container {
   max-width: 960px;
 }
-
-input:invalid {
-  outline: 2px solid red;
-}
-
-input:valid {
-  outline: 2px solid green;
-}
