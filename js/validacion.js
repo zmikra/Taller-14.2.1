@@ -76,6 +76,23 @@ function validatePasswords(){
         }
 }
 
+function validateTerms(){
+checkbox = document.getElementById("terminos");
+terminosFeedback = document.getElementById("terminosFeedback");
+label = document.getElementById("label");
+botonterminos = document.getElementById("btmodal");
+
+if (!checkbox.checked) {
+terminosFeedback.textContent = 'Debe aceptar los terminos del servicio';
+terminosFeedback.classList.add('is-invalid');
+label.classList.add('is-invalid');
+} else {
+    label.classList.add('is-valid');
+}
+
+}
+
+
 const form = document.getElementById("form");
 
 form.addEventListener('submit', function(event) {
@@ -83,6 +100,7 @@ form.addEventListener('submit', function(event) {
     validateFields(); // Valida los campos genéricos
     validateEmail();  // Valida específicamente el campo de correo electrónico
     validatePasswords();
+    validateTerms();
 
     // Aquí puedes verificar si algún campo aún tiene la clase 'is-invalid' antes de enviar
     const invalidFields = form.querySelectorAll('.is-invalid');
