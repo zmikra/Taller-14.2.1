@@ -39,12 +39,51 @@ function validateEmail() {
     email.reportValidity();
 }
 
+function validatePasswords(){
+    const password1 = document.getElementById("password1");
+    const password2 = document.getElementById("password2");
+    const password2Feedback = document.getElementById("password2Feedback");
+    const password1Feedback = document.getElementById("password1Feedback");
+    const validity1 = password1.validity;
+    const validity2 = password2.validity;
+
+
+    if (validity1.valueMissing) {
+        password1Feedback.textContent = 'Debe ingresar una contraseña';
+        password1.classList.add('is-invalid');
+        password2.classList.add('is-invalid');
+
+        }else if (password1.value.length < 6) {
+        password1.classList.add('is-invalid');
+        password1Feedback.textContent = 'La contraseña debe tener al menos 6 caracteres';
+        password2.classList.add('is-invalid');
+
+        } else if(validity2.valueMissing) {
+        password2Feedback.textContent = 'Debe repetir la contraseña';
+        password2.classList.add('is-invalid');
+
+        } else if (password1.value !== password2.value) {
+        password1.classList.add('is-invalid');
+        password2.classList.add('is-invalid');
+        password2Feedback.textContent = 'La contraseña no coincide';
+
+        } else if (validity1.valid & validity2.valid) {
+        password1.classList.remove('is-invalid');
+        password2.classList.remove('is-invalid');
+        password1.classList.add('is-valid');
+        password2.classList.add('is-valid');
+        password1Feedback.textContent = '';
+        password2Feedback.textContent = '';
+        }
+}
+
 const form = document.getElementById("form");
 
 form.addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío inmediato del formulario
     validateFields(); // Valida los campos genéricos
     validateEmail();  // Valida específicamente el campo de correo electrónico
+    validatePasswords();
 
     // Aquí puedes verificar si algún campo aún tiene la clase 'is-invalid' antes de enviar
     const invalidFields = form.querySelectorAll('.is-invalid');
