@@ -63,9 +63,8 @@ function validatePasswords(){
         password2.classList.add('is-invalid');
 
         } else if (password1.value !== password2.value) {
-        password1.classList.add('is-invalid');
         password2.classList.add('is-invalid');
-        password2Feedback.textContent = 'La contraseña no coincide';
+        password2Feedback.textContent = 'Debe ser igual a "contraseña"';
 
         } else if (validity1.valid & validity2.valid) {
         password1.classList.remove('is-invalid');
