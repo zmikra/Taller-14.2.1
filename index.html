@@ -11,47 +11,39 @@
 </head>
 
 <body class="bg-light">
-
   <div class="container">
     <main>
-      <form action="#" method="get" class="row mt-4 needs-validation" novalidate>
+      <form action="#" method="get" class="row mt-4 needs-validation" id="form" novalidate>
         <div class="col">
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre">
+              <input type="text" class="form-control" id="nombre" required>
               <div class="invalid-feedback">Debe ingresar un nombre</div>
-              
             </div>
-
-    
 
             <div class="col-sm-6">
               <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellido">
+              <input type="text" class="form-control" id="apellido" required>
               <div class="invalid-feedback">Debe ingresar un apellido</div>
-              
             </div>
-
-
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
               <div id="emailFeedback" class="invalid-feedback">Debe ingresar un e-mail</div>
-              
             </div>
 
             <div class="col-sm-6">
               <label for="password1" class="form-label" minlength="6">Contraseña</label>
-              <input type="password" class="form-control" id="password1">
+              <input type="password" class="form-control" id="password1" required>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label" minlength="6">Repetir contraseña</label>
-              <input type="password" class="form-control" id="password2">
+              <input type="password" class="form-control" id="password2" required>
             </div>
 
             <div class="col-sm-12">
@@ -59,14 +51,10 @@
                 data-bs-target="#modalTerminos">Términos del servicio</button>
             </div>
 
-
             <button class="btn btn-primary" type="submit" id="submit">Registrarme</button>
-
-
           </div>
         </div>
       </form>
-
     </main>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -85,9 +73,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quasi sapiente voluptatum deserunt?
-            Deleniti, adipisci vitae in quaerat eius nemo optio? Quas at magni saepe cumque. Delectus perspiciatis omnis
-            accusamus.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
         </div>
         <div class="modal-footer">
           <div class="form-check">
